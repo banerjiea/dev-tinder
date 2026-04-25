@@ -8,6 +8,11 @@ import Feed from "./components/Feed";
 import Connections from "./components/Connections";
 import Requests from "./components/Requests";
 import Chat from "./components/Chat";
+import PrivacyPolicy from "./components/Privacypolicy";
+import TermsOfService from "./components/TermsofService";
+import RefundPolicy from "./components/RefundPolicy";
+import ContactUs from "./components/Contactus";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,7 +27,12 @@ function App() {
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
               <Route path="/chat/:targetUserId" element={<Chat/>}/>
-            </Route>
+              </Route>
+            {/* Policy pages — fully public, outside Body, no auth needed */}
+            <Route path="/privacy-policy" element={<><PrivacyPolicy /><Footer /></>} />
+            <Route path="/terms-of-service" element={<><TermsOfService /><Footer /></>} />
+            <Route path="/refund-policy" element={<><RefundPolicy /><Footer /></>} />
+            <Route path="/contact-us" element={<><ContactUs /><Footer /></>} />
           </Routes>
         </BrowserRouter>
       </Provider>

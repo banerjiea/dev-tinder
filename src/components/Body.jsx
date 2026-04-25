@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BASE_URL } from "../utils/constants";
 import { addUser } from "../utils/userSlice";
 import axios from "axios";
+import Footer from "./Footer";
 
 const Body = () => {
   const navigate=useNavigate()
@@ -19,7 +20,7 @@ const Body = () => {
      dispatch(addUser(res.data))
     }catch(err){
       if(err.status===401){
-         navigate("/login");
+         navigate("/login");  
       }
        console.error(err)
     }
@@ -32,6 +33,7 @@ const Body = () => {
     <div>
       <NavBar />
       <Outlet />
+      <Footer/>
     </div>
   );
 };
