@@ -13,6 +13,7 @@ import TermsOfService from "./components/TermsofService";
 import RefundPolicy from "./components/RefundPolicy";
 import ContactUs from "./components/Contactus";
 import Footer from "./components/Footer";
+import Premium from "./components/Premium";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
               <Route path="/chat/:targetUserId" element={<Chat/>}/>
+               <Route path="/premium" element={<Premium />} />
               </Route>
             {/* Policy pages — fully public, outside Body, no auth needed */}
             <Route path="/privacy-policy" element={<><PrivacyPolicy /><Footer /></>} />
